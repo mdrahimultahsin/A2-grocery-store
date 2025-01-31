@@ -54,11 +54,11 @@
       }
 
       #hero-img {
+        overflow-x: hidden;
         animation-name: fadeDown;
         animation-timing-function: 1s;
         animation-duration: 2s;
         animation-delay: 0.5s;
-        position: relative;
       }
       #hero-content {
         animation-name: fadeIn;
@@ -87,18 +87,18 @@
         }
       }
       .hero-anime {
-        position: absolute;
-        top: 0;
-        animation: labelAnime 1s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+        animation: carAnime 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       }
-      @keyframes labelAnime {
+      @keyframes carAnime {
         0% {
-          opacity: 1;
-          transform: translatex(-40px);
+          transform: translatex(0%);
+          transform: translatey(-10px);
+        }
+        5% {
+          transform: translatey(0px);
         }
         100% {
-          opacity: 1;
-          transform: translatex(0);
+          transform: translatex(100%);
         }
       }
     </style>
@@ -222,7 +222,7 @@
       <!-- Banner Section -->
       <section
         id="hero-banner"
-        class="flex flex-col items-center justify-center gap-8 pt-12 lg:pt-20 px-4"
+        class="flex flex-col items-center justify-center gap-1 pt-12 lg:pt-20 px-4"
       >
         <!-- Content -->
         <div id="hero-content" class="text-center space-y-4">
@@ -238,11 +238,14 @@
           </p>
         </div>
         <!-- Images -->
-        <div id="hero-img">
-          <div class="hero-anime w-48">
-            <img src="images/label.png" alt="" />
+        <div id="hero-img" class="flex flex-col">  
+          <!-- Animaition bus -->
+          <div class="hero-anime">
+            <img class="w-32" src="images/delivery.png" alt="" />
           </div>
-          <img src="images/hero-vegetables.png" alt="" />
+          <!-- hero Img -->
+          <div>      
+          <img src="images/hero-vegetables.png" alt="" /></div>
         </div>
       </section>
     </header>
