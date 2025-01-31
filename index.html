@@ -58,6 +58,7 @@
         animation-timing-function: 1s;
         animation-duration: 2s;
         animation-delay: 0.5s;
+        position: relative;
       }
       #hero-content {
         animation-name: fadeIn;
@@ -85,9 +86,24 @@
           transform: translateY(0);
         }
       }
+      .hero-anime {
+        position: absolute;
+        top: 0;
+        animation: labelAnime 1s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+      }
+      @keyframes labelAnime {
+        0% {
+          opacity: 1;
+          transform: translatex(-40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translatex(0);
+        }
+      }
     </style>
   </head>
-  <body class="font-font-sora">
+  <body class="font-font-sora ">
     <!-- Header Section -->
     <header
       class="w-full lg:container h-auto md:px-8 lg:px-20 pt-4 md:pt-6 bg-gradient-to-b from-white to-yellow-50"
@@ -223,6 +239,9 @@
         </div>
         <!-- Images -->
         <div id="hero-img">
+          <div class="hero-anime w-48">
+            <img src="images/label.png" alt="" />
+          </div>
           <img src="images/hero-vegetables.png" alt="" />
         </div>
       </section>
